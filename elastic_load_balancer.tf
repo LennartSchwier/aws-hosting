@@ -14,10 +14,6 @@ resource "aws_lb" "alb" {
   enable_deletion_protection = false
 }
 
-output "lb_dns_name" {
-  value = aws_lb.alb.dns_name
-}
-
 resource "aws_lb_listener" "alb_listener" {
   load_balancer_arn = aws_lb.alb.id
   port = 80
