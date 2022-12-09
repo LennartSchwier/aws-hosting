@@ -22,8 +22,14 @@ variable "vpc_id" {
   default = "vpc-cce757a6"
 }
 
-variable "cidr_block" {
+variable "cidr_block_vpc" {
   description = "cidr block assigned to vpc"
   type = string
-  default = "172.31.0.0/16"
+  default = "172.27.0.0/16"
+}
+
+variable "cidr_blocks_subnets" {
+  description = "cidr blocks assigned to subnets"
+  type = list(string)
+  default = ["172.27.0.0/20", "172.27.16.0/20", "172.27.32.0/20"]
 }
