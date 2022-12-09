@@ -1,5 +1,6 @@
 resource "aws_security_group" "web_access" {
   name = "web-access"
+  vpc_id = aws_vpc.main.id
 
   ingress {
     description = "HTTP"
@@ -28,6 +29,7 @@ resource "aws_security_group" "web_access" {
 
 resource "aws_security_group" "http_port80" {
   name = "http-port80"
+  vpc_id = aws_vpc.main.id
 
   ingress {
     description = "HTTP:80"

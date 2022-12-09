@@ -3,7 +3,8 @@ resource "aws_autoscaling_group" "asg" {
   max_size = 3
   min_size = 2
   desired_capacity = 2
-  availability_zones = data.aws_availability_zones.availability_zones.names
+  vpc_zone_identifier = [for subnet in aws_subnet.public_sn_main : subnet.id]
+  #availability_zones = [for subnet in aws_subnet.public_sn_main : subnet.availability_zone]
 
   launch_template {
     id = aws_launch_template.launch_template.id
