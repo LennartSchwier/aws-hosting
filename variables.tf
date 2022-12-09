@@ -28,8 +28,14 @@ variable "cidr_block_vpc" {
   default = "172.27.0.0/16"
 }
 
-variable "cidr_blocks_subnets" {
-  description = "cidr blocks assigned to subnets"
+variable "cidr_block_public_subnet" {
+  description = "cidr block assigned to the public subnet"
+  type = string
+  default = "172.27.0.0/20"
+}
+
+variable "cidr_blocks_private_subnets" {
+  description = "cidr blocks assigned to private subnets"
   type = list(string)
-  default = ["172.27.0.0/20", "172.27.16.0/20", "172.27.32.0/20"]
+  default = ["172.27.16.0/20", "172.27.32.0/20", "172.27.48.0/20"]
 }

@@ -9,7 +9,7 @@ resource "aws_lb" "alb" {
   name = "cloud-programming-lb"
   load_balancer_type = "application"
   security_groups = [aws_security_group.http_port80.id]
-  subnets = [for subnet in aws_subnet.public_sn_main : subnet.id]
+  subnets = [for subnet in aws_subnet.private_sn_main : subnet.id]
 
   enable_deletion_protection = false
 }
