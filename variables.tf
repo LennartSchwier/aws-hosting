@@ -9,15 +9,3 @@ variable "instance_type" {
   type = string
   default = "t2.micro"
 }
-
-variable "availability_zones" {
-  description = "availability zones"
-  type = list(string)
-  default = ["eu-central-1a", "eu-central-1b"]
-}
-
-variable "vpc_id" {
-  description = "VPC id"
-  type = string
-  default = "vpc-cce757a6"
-}
