@@ -2,7 +2,7 @@ resource "aws_lb_target_group" "lb_target_group" {
   name = "cloud-programming-tg"
   protocol = "HTTP"
   port = "80"
-  vpc_id = var.vpc_id
+  vpc_id = data.aws_vpcs.default_vpc.ids[0]
 }
 
 resource "aws_lb" "alb" {
