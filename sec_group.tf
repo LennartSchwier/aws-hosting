@@ -1,14 +1,5 @@
-resource "aws_security_group" "web_access" {
-  name = "web-access"
-
-  ingress {
-    description = "HTTP"
-    from_port = 80
-    protocol  = "tcp"
-    to_port   = 80
-    cidr_blocks = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
+resource "aws_security_group" "ssh_port22" {
+  name = "ssh-port22"
 
   ingress {
     description = "SSH"
