@@ -1,5 +1,5 @@
 resource "aws_autoscaling_group" "asg" {
-  name = "cloud-computing-asg"
+  name = "${var.project_name}-asg"
   max_size = var.max_size
   min_size = var.min_size
   desired_capacity = var.desired_capacity

@@ -24,6 +24,10 @@ resource "aws_security_group" "web_access" {
     to_port   = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  tags = {
+    Name = var.project_name
+  }
 }
 
 resource "aws_security_group" "http_port80" {
@@ -43,5 +47,9 @@ resource "aws_security_group" "http_port80" {
     protocol  = "-1"
     to_port   = 0
     cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+        Name = var.project_name
   }
 }
