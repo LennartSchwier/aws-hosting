@@ -1,8 +1,8 @@
 resource "aws_autoscaling_group" "asg" {
   name = "cloud-computing-asg"
-  max_size = 3
-  min_size = 2
-  desired_capacity = 2
+  max_size = var.max_size
+  min_size = var.min_size
+  desired_capacity = var.desired_capacity
   availability_zones = data.aws_availability_zones.availability_zones.names
 
   launch_template {
