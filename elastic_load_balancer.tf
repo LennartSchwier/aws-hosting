@@ -1,12 +1,12 @@
 resource "aws_lb_target_group" "lb_target_group" {
-  name = "cloud-programming-tg"
+  name = "${var.project_name}-tg"
   protocol = "HTTP"
   port = "80"
   vpc_id = data.aws_vpcs.default_vpc.ids[0]
 }
 
 resource "aws_lb" "alb" {
-  name = "cloud-programming-lb"
+  name = "${var.project_name}-lb"
   load_balancer_type = "application"
   security_groups = [aws_security_group.http_port80.id]
   subnets = data.aws_subnets.subnets.ids
